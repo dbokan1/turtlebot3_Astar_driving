@@ -19,8 +19,8 @@ Ovo pokrece kretanje turtlebota naprijed pa okretanje i kretanje lijevo.
 - a*.cpp: kod koji ucita grayscale sliku mape, sa zadanom pocetnom i krajnjom pozicijom pronadje optimalnu putanju (ne radi).
 
 ## Obaveze
-- [ ] Napraviti komunikaciju sa turtlebotom (odom i cmd_vel)
-- [ ] Gmappingom dobiti sliku mape
+- [x] Napraviti komunikaciju sa turtlebotom (odom i cmd_vel)
+- [x] Gmappingom dobiti sliku mape
 - [ ] Napraviti a* koji radi sa slikom i ROSom i updateati cmakelist
 - [ ] Napraviti transfer_fcn koja ce prilagoditi vrijednosti world koordinata u image space i diskretizirati sliku mape- povezani graf
 - [ ] Povezati sve kodove: Slika u A*, putanja iz A* u turtlebot3_class, upravljacki signal iz turtlebot3_class u transfer_fcn i odom ocitavanja nazad.
