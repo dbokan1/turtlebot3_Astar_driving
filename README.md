@@ -22,5 +22,8 @@ Ovo pokrece kretanje turtlebota naprijed pa okretanje i kretanje lijevo.
 - [x] Napraviti komunikaciju sa turtlebotom (odom i cmd_vel)
 - [x] Gmappingom dobiti sliku mape
 - [ ] Napraviti a* koji radi sa slikom i ROSom i updateati cmakelist
-- [ ] Napraviti transfer_fcn koja ce prilagoditi vrijednosti world koordinata u image space i diskretizirati sliku mape- povezani graf
-- [ ] Povezati sve kodove: Slika u A*, putanja iz A* u turtlebot3_class, upravljacki signal iz turtlebot3_class u transfer_fcn i odom ocitavanja nazad.
+- [ ] Za transfer upravljacki blok: prelaz iz pixel koordinatnog sistema slike u real world koordinatni sistem simulacije
+- [ ] Za transfer upravljacki blok: diskretizirati real world koordinatni da se omoguci kretanje iz jednog mjesta u drugo
+- [ ] Za transfer upravljacki blok: ostvariti upravljacki algoritam za slanje ugaone i linearne brzine uz fizikalna ogranicenja
+- [ ] Za transfer upravljacki blok: implementirati povratnu spregu za real time updateovanje brzine na osnovu odometrije
+- [ ] Povezati sve kodove: Slika u A*, putanja iz A* u control blok, upravljacki signal iz bloka u simulaciju, odom nazad
