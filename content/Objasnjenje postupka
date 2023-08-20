@@ -1,0 +1,14 @@
+OBJASNJENJE POSTUPKA:
+
+-----------------------
+- Orginalna mapa je dobijena koristenjem gmapping alata unutar tb3 simulatora. Rezolucija 0.05- 1 piksel je 0.05 m u simulatoru.
+- S obzirom da turtlebot ima stvarne dimenzije, postojece prepreke paddamo/uvecavamo kako putanja koju Astar algoritam stvara ne bi prolazila preblizu prepreka/bilo sudara.
+- Astar daje na izlazu niz koordinata koje predstavljaju putanju- od tog niza dobijamo pocetne i krajnje tacke segmenata putanje. 
+Segment smatramo dio puta gdje robot ne mijenja smjer kretanja.
+- Piksel koordinate granica segmenata preslikavamo u koordinate u simulatoru. Dva koordinatna su obrnutih smjerova (potrebno pomnoziti sa -1) i translatirani jedni od drugih. 
+Vise objasnjenja u Colab fileu.
+- Dobijeni niz simulatorskih koordinata saljemo u init funkciju klase Controller. Dalje se robot krece od tacke do tacke dok ne dodje do cilja.
+- Upravljacki algoritam: racunamo pozu orijentacije bota na osnovu odom poruka. Pozu racunamo kao ugao u odnosu na x osu. Dalje racunamo relativnu pozu robota u odnosu na ciljnu tacku.
+Relativna poza je prikazana kao ugao izmedju vektora pozicije izmedju robota i ciljne tacke i x ose. Robota rotiramo ugaonom brzinom dok se poza njegove orijentacije ne poklopi sa relativnom pozom.
+- Zbog promjenjive brzine iteriranja ros publishera i subscribera sa ros sleep, upravljanje je diskretizirano te je ekstremno tesko namjestiti skroz tacnu pozu. U tu svrhu ubacujemo epsilon prostor greske. Smatramo da je robot dosao do ciljne tacke ako je usao u epsilon zonu oko tacke. Smatramo da je robotov smjer tacan ako pravac orijentacije robota prolazi kroz epsilon osu oko ciljne tacke.
+- Pri svakoj iteraciji ros petlje, robot ili podesava svoj ugao prema ciljnoj tacki ili krece se naprijed prema njoj.
