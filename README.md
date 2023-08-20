@@ -9,7 +9,7 @@ Stablo bi trebalo izgledati: catkin_ws/src/tb3_control_interface.
 ## Pokretanje
 - roscore
 - roslaunch turtlebot3_gazebo turtlebot3_world.launch
-- rosrun tb3_control_interface turtlebot3_class.
+- rosrun tb3_control_py test.py
 
 Ovo pokrece kretanje turtlebota naprijed pa okretanje i kretanje lijevo.
 
